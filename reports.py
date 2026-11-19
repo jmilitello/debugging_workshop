@@ -1,9 +1,9 @@
 def find_product_by_name(products, name):
+    needle = name.strip().lower()
     for product in products:
-        if product["name"].lower() == name:
+        if product["name"].strip().lower() == needle:
             return product
     return None
-
 
 def low_stock_products(products, threshold=5):
     return [p for p in products if p["stock"] < threshold and p["stock"] > 0]
